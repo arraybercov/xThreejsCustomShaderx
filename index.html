@@ -22,18 +22,14 @@
     precision mediump float;
     #endif
 
-varying vec2 vUv;
+    varying vec2 vUv;
 
 void main()
 {
     vUv = uv;
-
-    vec4 mvPosition = modelViewMatrix * vec4(position, 1.0 );
-    gl_Position = projectionMatrix * mvPosition;
-
-    // gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-
-    // gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4( position, 1.0 );
+    // vec4 mvPosition = modelViewMatrix * vec4(position, 1.0 );
+    // gl_Position = projectionMatrix * mvPosition;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
 }
 </script>
 
@@ -43,7 +39,6 @@ precision mediump float;
 #endif
 
 uniform float time;
-// uniform vec2 resolution;
 
 varying vec2 vUv;
 
