@@ -86,8 +86,9 @@ function init( ) {
 
 	scene = new THREE.Scene();
 
-  var light = new THREE.AmbientLight( 0xffffff ); // soft white light
+  var light = new THREE.AmbientLight( 0xffffff );
   scene.add( light );
+	light.intensity = 2;
 
   geometry = new THREE.PlaneBufferGeometry(5, 5);
 
